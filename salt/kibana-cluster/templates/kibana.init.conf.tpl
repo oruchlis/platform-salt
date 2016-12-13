@@ -14,8 +14,8 @@ umask 007
 
 kill timeout 300
 
-setuid kibana
-setgid kibana
+setuid elasticsearch
+setgid elasticsearch
 
 pre-start script
 

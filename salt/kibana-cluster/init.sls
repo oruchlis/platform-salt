@@ -3,18 +3,18 @@
 
 kibana-kibana:
   group.present:
-    - name: kibana
+    - name: elasticsearch
   user.present:
-    - name: kibana
+    - name: elasticsearch
     - gid_from_name: True
     - groups:
-      - kibana
+      - elasticsearch
 
 kibana-create_kibana_dir:
   file.directory:
     - name: {{kibana_directory}}
-    - user: kibana
-    - group: kibana
+    - user: elasticsearch
+    - group: elasticsearch
     - dir_mode: 777
     - makedirs: True
 
@@ -30,8 +30,8 @@ kibana-copy_configuration_kibana:
   file.managed:
     - name: {{kibana_directory}}/kibana-{{ kibana_version }}/config/kibana.yml
     - source: salt://kibana-cluster/files/kibana.yml
-    - user: kibana
-    - group: kibana
+    - user: elasticsearch
+    - group: elasticsearch
 
 kibana-copy_kibana_upstart:
   file.managed:
