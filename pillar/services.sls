@@ -10,6 +10,10 @@ kibana:
   version: 4.1.6-linux-x64
   directory: /opt/pnda
 
+kibana-cluster:
+  version: 5.0.0-linux-x86_64
+  directory: /opt/pnda
+
 elasticsearch:
   version: 1.5.0
   directory: /opt/pnda

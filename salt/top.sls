@@ -101,4 +101,7 @@
   'roles:elk-es-*':
    - match: grain
    - elasticsearch-cluster
-
+   
+  'roles:elk-es-coordinator or elk-es-multi':
+   - match: grain
+   - kibana-cluster 
