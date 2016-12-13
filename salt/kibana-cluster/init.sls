@@ -29,13 +29,13 @@ kibana-dl_and_extract_kibana:
 kibana-copy_configuration_kibana:
   file.managed:
     - name: {{kibana_directory}}/kibana-{{ kibana_version }}/config/kibana.yml
-    - source: salt://kibana/files/kibana.yml
+    - source: salt://kibana-cluster/files/kibana.yml
     - user: kibana
     - group: kibana
 
 kibana-copy_kibana_upstart:
   file.managed:
-    - source: salt://kibana/templates/kibana.init.conf.tpl
+    - source: salt://kibana-cluster/templates/kibana.init.conf.tpl
     - name: /etc/init/kibana.conf
     - mode: 644
     - template: jinja
